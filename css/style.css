@@ -1,0 +1,135 @@
+html {
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+* {
+	box-sizing: border-box;
+  }
+  
+
+.white-text {
+	color: white;
+	margin: auto;
+	text-align: center;
+	display: block;
+	font-family: arial; 
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+	float: left;
+	width: 50%;
+	padding: 10px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+	.column {
+	  width: 100%;
+	}
+  }
+
+
+body {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
+.under {
+	z-index:-1;
+}
+
+.over {
+	z-index:1;
+}
+
+.night-sky {
+	display: block;
+	position: fixed;
+	background: #111;
+	background: linear-gradient(0deg, #000, #333);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	z-index: -2;
+}
+
+#moon-container {
+	margin: auto;
+	text-align: center;
+	display: block;
+	width: 40vw;
+	height: auto;
+	border-radius: 50%;
+}
+
+#moon-img {
+	width: 100%;
+	height: auto;
+	animation-name: rotate;
+	animation-duration: 160s;
+	transform-origin: 50% 50%;
+	pointer-events: none;
+}
+
+#cloud-container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	opacity: 1;
+	transition: 5s ease;
+	padding-top: 5%;
+	padding-bottom: 0%;
+	text-align: center;
+	pointer-events: none;
+}
+
+#moon-container:hover #cloud-container {
+	opacity: 0;
+	padding-top: 0%;
+	padding-bottom: 5%;
+	pointer-events: none;
+}
+
+#cloud-img {
+	margin: auto;
+	text-align: center;
+	display: block;
+	width: 98vw;
+	height: auto;
+	pointer-events: none;
+}
+
+#info {
+	//padding-top: 100vh;
+}
+
+#clock {
+	margin: 0px;
+	text-align: center;
+	color: white;
+	font-size: 20vw;
+}
+
+@keyframes rotate {
+		0% {
+				transform: rotate(0deg);
+		}
+		100% {
+				transform: rotate(360deg);
+		}
+}
